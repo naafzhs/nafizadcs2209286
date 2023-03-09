@@ -1,0 +1,226 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry Form</title>
+
+  <link href="formstyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    function validateForm() {
+    
+      // to validate text - do not allow empty
+      let x = document.MyForm.username.value;
+      if (x == "") {
+        alert("Please provide your Name!");
+        return false;
+      }
+     
+      // to validate text - only allow alphabet characters
+      var letters = /^[A-Za-z]/;
+      if (!x.match(letters))
+      {
+        alert("Please input alphabet characters.");
+        return false;
+      }
+      let y = document.MyForm.userphone.value;
+      if (y == "") {
+        alert("Please provide your Phone Number!");
+        return false;
+      }
+      var numbers = /^[0-9]/;
+      if (!y.match(numbers))
+      {
+        alert("Please input numbers.");
+        return false;
+      }
+    
+      // to validate radio button - must select
+      if ((MyForm.gender[0].checked == false) && (MyForm.gender[1].checked == false)) 
+      {
+        alert ("Please choose Gender: Male or Female"); 
+        return false;
+      }
+    
+      // to validate age
+     var date1 = new Date();
+     var dob = document.MyForm.dob.value;
+     var date2 = new Date(dob);
+     var y1 = date1.getFullYear(); // getting current year
+     var y2 = date2.getFullYear(); // getting dob year
+     var age = y1-y2; //calculating age
+     alert("Age: " + age);
+     return true;
+    }
+    </script>
+</head>
+
+<body>
+  <header>
+		<a href="#" class="logo">
+			<img src="collegelogo.jpg">
+		</a>
+
+		<ul class="navbar">
+			<li><a href="Nafiza Hanis_DCS2209286.html">Home</a></li>
+			<li><a href="popularcourses.html" target="_blank">Courses</a></li>
+			<li><a href="educators.html" target="_blank">Our Educators</a></li>
+			<li><a href="#contact">Contact Us</a></li>
+			<li><a href="projectform.html" target="_blank">Join Us</a></li>
+		</ul>
+
+		<div class="header-icons">
+			<a href="#"><i class='bx bxs-user'></i></a>
+			<a href="#"><i class='bx bxs-heart' ></i></a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+<center>
+<form name=MyForm onsubmit="return validateForm()">  
+<br>
+
+<section class="home" id="home">
+  <div class="home-text">
+          <h1 style="font-family: 'Montserrat', sans-serif; color: #06623c;">Enquiry Form</h1>
+
+  </div>
+</section>
+<section class="form" id="form">
+  <div class="center-text">
+    <h2>Personal Details:</h2>
+  </div>
+<br><br>
+
+<table>
+<tr>
+<td width='40%' height="30%" class='title'>
+Name: 
+</td>
+<td>
+<input type=text name=username> 
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Gender: 
+</td>
+<td>
+<input type =radio name =gender value =Male> Male
+<input type =radio name =gender value =Female> Female
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Date of Birth:
+</td>
+<td>
+<input type=date name=dob>
+</td>
+</tr>
+
+<tr>
+  <td class='title'>
+ Phone Number: 
+  </td>
+  <td>
+  <input type=number name=userphone minlength="10" maxlength="11"> 
+  </td>
+</tr>
+
+<tr>
+<td class='title'>
+Email Address: 
+</td>
+<td>
+<input type=email name=useremail> 
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Course You're Interested In:
+</td>
+<td>
+<select name=course>
+<option value=none disabled selected>- List of Courses -</option>
+<option value="DCS">Diploma In Computer Science</option>
+<option value="DIB">Diploma In Bussiness</option>
+<option value="DIF">Diploma In Finance</option>
+<option value="DIEL">Diploma In English Language</option>
+<option value="DIM">Diploma In Mathematics</option>
+</select>
+</td>
+</tr>
+
+
+<tr>
+<td class='title'>
+Highest Level of Education:
+</td>
+<td>
+
+<select name=education>
+<option value=none disabled selected>- Education Level -</option>
+<option value="SPM">Sijil Pelajaran Malaysia(SPM)</option>
+<option value="STPM">Sijil Tinggi Persekolahan Malaysia(STPM)</option>
+<option value="Diploma">Diploma</option>
+<option value="Undergraduate">Undergraduate</option>
+<option value="Graduate">Graduate</option>
+</select>
+</td>
+</tr>
+
+</table>
+
+<br><br>
+
+<input type=submit value=Submit>
+<input type=reset value=Reset>
+<br><br>
+
+</form>
+</center>
+<section class="contact" id="contact">
+  <div class="main-contact">
+    <div class="contact-content">
+      <img src="collegelogo.jpg">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Twitter</a></li>
+    </div>
+
+    <div class="contact-content">
+      <li><a href="#home">Home</a></li>
+      <li><a href="popularcourses.html" target="_blank">Courses</a></li>
+      <li><a href="educators.html" target="_blank">Our Educators</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="projectform.html" target="_blank">Join Us</a></li>
+    </div>
+
+    <div class="contact-content">
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Instructor</a></li>
+      <li><a href="#">Dashboard</a></li>
+    </div>
+
+    <div class="contact-content">
+      <li><a href="#">Kanata,<br> Ottawa, ON, Canada</a></li>
+      <li><a href="#">canadacollege@gmail.com</a></li>
+      <li><a href="#">01110721017</a></li>
+    </div>
+
+  </div>
+</section>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
